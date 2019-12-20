@@ -8,6 +8,15 @@ var level = 0;
 
 var started = false;
 
+//only to make compatible with mobile devices
+$("#mobile-button").on("click",function () {
+  if(!started) {
+    generatePattern();
+    $("#level-title").text("level " + level);
+    started = true;
+  }
+});
+
 // for starting the game by a keypress using the "keypress" event listener
 $("body").on("keypress",function () {
   if(!started) {
